@@ -2,37 +2,34 @@ $(function () {
 
 	function init () {
 
-		$("form#addNew").on("submit",function	(e) {
-			console.log("UPLOAD");
-			return false;
-		});
+
 
 		$("#addNew").submit(function(e) {
 
-	    var url = "http://10.3.210.104:8080/Ruimtes/voegRuimteToe"; // the script where you handle the form input.
-			var formData = new FormData($(this)[0]);
-			/*var data = new FormData();
-			jQuery.each(jQuery('#image')[0].files, function(i, file) {
-			    data.append('image', file);
-			});*/
-			formData.append("image", jQuery('#image')[0].files[0]);
-			console.log(formData);
-			
-			jQuery.ajax({
-			    url: url,
-			    data: formData,
-			    cache: false,
-			    contentType: false,
-			    processData: false,
-			    type: 'POST',
-			    success: function(data){
-			        alert(data);
-			    }
-			});
+		    var url = "http://10.3.210.104:8080/Ruimtes/voegRuimteToe"; // the script where you handle the form input.
+				var formData = new FormData();
+				var data = new FormData();
+				/*jQuery.each(jQuery('#image')[0].files, function(i, file) {
+				    data.append('image', file);
+				});*/
+				formData.append("image", jQuery('#image')[0].files[0]);
+				formData.append("name", $('#name').val());
+
+				jQuery.ajax({
+				    url: url,
+				    data: formData,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				    type: 'POST',
+				    success: function(data){
+				        alert(data);
+				    }
+				});
 
 
-	    e.preventDefault(); // avoid to execute the actual submit of the form.
-	});
+		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
 
 		loadRuimtes("en");
 
