@@ -15,9 +15,9 @@ $(function () {
 			jQuery.each(jQuery('#image')[0].files, function(i, file) {
 			    data.append('image', file);
 			});*/
-			formData.append("image", $("#image").files[0]);
+			formData.append("image", jQuery('#image')[0].files[0]);
 			console.log(formData);
-
+			
 			jQuery.ajax({
 			    url: url,
 			    data: formData,
