@@ -358,7 +358,7 @@ article section.comics form .upload{
 	background-image: url(../images/assets/upload.svg);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 150px;
+	background-size: 200px;
 }
 article section.comics form .upload h1{
 
@@ -392,7 +392,7 @@ article section.comics form header input[type='text']{
 	font-weight: bold;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	margin-bottom: 5%;
+	margin-bottom: 10%;
 }
 article section.comics form header input[type='submit']{
 	display: block;
@@ -432,6 +432,7 @@ article section.comics form header input[type='text'].comics{
 	font-family: Bariol-Regular;
 	color: rgba(255,255,255,.5);
 	font-size: 1.2em;
+	margin-bottom: 5%;
 }
 article section.comics header h1{
 

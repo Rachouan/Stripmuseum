@@ -31,6 +31,41 @@ $(function () {
 		    e.preventDefault(); // avoid to execute the actual submit of the form.
 		});
 
+
+		$("input[type='file']").change(function(){
+		    readURL(this);
+		});
+
+		$("#btn_clear").on("click",function	(e) {
+
+			console.log("clear");
+			clearForm($("#addNew"));
+
+
+		});
+
+		$("a#add").on('click',function	(e) {
+			e.preventDefault();
+			console.log("CLICKED");
+
+			if($(this).hasClass('close')){
+					$(this).removeClass('close');
+					$(this).html('<span>New</span>');
+			}else {
+					$(this).addClass('close');
+					$(this).html('<span>close</span>');
+			}
+
+			if($("article").hasClass("add")){
+					$("article").removeClass("add");
+			}else {
+				$("article").addClass("add");
+			}
+
+
+		});
+
+
 		loadRuimtes("en");
 
 		/*$('form#addNew').on('submit',function (e) {
@@ -88,32 +123,7 @@ $(function () {
 
 	function assignActions () {
 
-		$("input[type='file']").change(function(){
-		    readURL(this);
-		});
 
-
-
-		$("a#add").on('click',function	(e) {
-			e.preventDefault();
-			console.log("CLICKED");
-
-			if($(this).hasClass('close')){
-					$(this).removeClass('close');
-					$(this).html('<span>New</span>');
-			}else {
-					$(this).addClass('close');
-					$(this).html('<span>close</span>');
-			}
-
-			if($("article").hasClass("add")){
-					$("article").removeClass("add");
-			}else {
-				$("article").addClass("add");
-			}
-
-
-		});
 
 		$("section.comics header a").on('click',function (e) {
 			e.preventDefault();
@@ -148,6 +158,13 @@ $(function () {
 			});
 
 		});
+	}
+
+	function clearForm(form) {
+
+		var textInput = form.find("input[type='text']");
+		$(textInput).val('');
+
 	}
 
 	init();
