@@ -1,6 +1,7 @@
 $(function () {
 
 	var ip = '10.3.210.118';
+	var id;
 
 	function init () {
 
@@ -34,6 +35,66 @@ $(function () {
 
 
 		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
+
+
+		$("#addRuimteInfo").submit(function(e) {
+
+		    var url = "http://"+ip+":8080/Info/voegInfoToeAanRuimte"; // the script where you handle the form input.
+				var formData = new FormData();
+				var data = new FormData();
+
+
+				formData.append("info_image", jQuery('#info_image')[0].files[0]);
+				formData.append("ruimte_id", id);
+				formData.append("info_name", $('#info_name').val());
+				formData.append("description_en", $('#description_en').val());
+				formData.append("description_nl", $('#description_nl').val());
+				formData.append("description_fr", $('#description_fr').val());
+
+				jQuery.ajax({
+				    url: url,
+				    data: formData,
+				    cache: false,
+				    contentType: false,
+				    processData: false,
+				    type: 'POST',
+				    success: function(data){
+				        alert(data);
+				    }
+				});
+
+
+		    e.preventDefault(); // avoid to execute the actual submit of the form.
+		});
+
+		$("article#room section a.add").on("click",function (e) {
+				e.preventDefault();
+
+				if($(this).hasClass('open')){
+					$(this).removeClass('open');
+					$("article#room section article.add").removeClass("open");
+				}else{
+					$(this).addClass('open');
+					$("article#room section article.add").addClass("open");
+				}
+		});
+
+		$("article#room section article.add aside ul li").on("click",function (e) {
+				e.preventDefault();
+				var tab = $(this);
+
+
+				if(tab.hasClass("open")){
+					tab.removeClass("open");
+				}else{
+					$("article#room section article.add aside ul li").each(function (key,val) {
+						if( tab !== val){
+								$(val).removeClass('open');
+						}
+					});
+					tab.addClass("open");
+				}
 		});
 
 
@@ -118,7 +179,7 @@ $(function () {
 			$(data).each(function (key,val) {
 				console.log(val);
 
-				$("<section/>").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href=''><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
+				$("<section/>").addClass("comics").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href='' id='"+val.id+"'><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
 			});
 
 			assignActions();
@@ -185,7 +246,10 @@ $(function () {
 
 					case "icon enter":
 						$("article#room").addClass("open");
+						var id = $(this).attr("id");
 						$("article#room header h1").text(comic.find('header h1').text()+' room');
+
+						console.log(id);
 
 					break;
 

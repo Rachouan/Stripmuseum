@@ -57,13 +57,46 @@
         </article>
 
 
-        <article id="room" class="open">
+        <article id="room">
             <header id="roomhead">
                 <h1>HERGE SPACE</h1>
                 <a href="" class="close"></a>
             </header>
             <section>
                 <a href="" class="add"></a>
+
+                <article class="add">
+                    <form id="addRuimteInfo" action="http://10.3.210.118:8080/Info/voegInfoToeAanRuimte" method="post" enctype="multipart/form-data">
+
+                    <header class="upload">
+                        <input type="file" name="info_image" id="info_image" required>
+                    </header>
+                    <aside>
+
+                        <input type="text" id="info_name" name="info_name" placeholder="Art name" >
+
+                        <ul>
+                            <li>
+                                <span>Description</span>
+                                <textarea name="description_en" id="description_en" placeholder="English description" required></textarea>
+                            </li>
+                            <li>
+                                <span>Beschrijving</span>
+                                <textarea name="description_nl" id="description_nl" placeholder="Nederlandse Beschrijving" required></textarea>
+                            </li>
+                            <li>
+                                <span>Description</span>
+                                <textarea name="description_fr" id="description_fr" placeholder="Description Français" required></textarea>
+                            </li>
+                        </ul>
+
+                        <input type="submit" id="btn_info_submit" name="btn_info_submit" value="send">
+
+                    </aside>
+
+                </form>
+                </article>
+
                 <article>
                     <header>
                         <img src="images/info/3.jpg" alt="random">

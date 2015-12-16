@@ -16,6 +16,9 @@
 input:focus{
 	outline: none;
 }
+textarea:focus{
+	outline: none;
+}
 
 .hide{
 	display: none;
@@ -281,9 +284,7 @@ article#comics section.comics nav ul li{
 
 }
 article#comics section.comics nav ul li:last-child{
-
 	border: none;
-
 }
 article#comics section.comics header a{
 
@@ -487,13 +488,11 @@ article#room.open{
 article#room header#roomhead{
 	position: absolute;
 	z-index: 9999;
-	padding: 50px;
+	padding: 50px 50px;
 	width: 100%;
 	line-height: 50px;
 	box-sizing: border-box;
 	background-color: #FFD460;
-	-webkit-box-shadow: 0 20px 30px 30px #FFD460;
-box-shadow: 0 20px 30px 30px #FFD460;
 
 }
 article#room header#roomhead h1{
@@ -530,6 +529,125 @@ article#room section{
 	text-align: center;
 }
 
+article#room section article.add{
+	margin-top: -200%;
+	opacity: 0;
+}
+article#room section article.add.open{
+	margin-top: 0px;
+	opacity: 1;
+}
+article#room section article.add header{
+	width: 100%;
+	float: left;
+	background-image: url(../images/assets/upload.svg);
+	height: 300px;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	background-size: 200px;
+	background-color: #EA5455;
+	background-repeat: no-repeat;
+}
+article#room section article.add header input{
+	left: 0;
+	top: 0;
+	width: 200%;
+	height: 200%;
+	opacity: 0;
+	cursor:pointer;
+}
+article#room section article.add aside ul li{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 30px;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	background-image: url(../images/assets/drop.svg);
+	text-transform: uppercase;
+	background-repeat: no-repeat;
+	background-position: top 20px right 30px;
+	background-size: 50px;
+	height: 90px;
+	cursor: pointer;
+	font-family: Bariol-Bold;
+	overflow: hidden;
+	color: #2D4059;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+article#room section article.add aside ul li.open{
+	background-image: url(../images/assets/up.svg);
+	height: 280px;
+}
+article#room section article.add aside ul li.open textarea{
+	opacity: 1;
+	margin-top: 5%;
+}
+article#room section article.add aside input[type="text"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(0,0,0,.5);
+}
+article#room section article.add aside input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:     rgba(0,0,0,.5);
+   opacity:  1;
+}
+article#room section article.add aside input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:     rgba(0,0,0,.5);
+}
+article#room section article.add aside input[type="text"]{
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 30px;
+	color: #2D4059;
+	background: none;
+	border: none;
+	font-size: 1.2em;
+	font-family: Bariol-Bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+article#room section article.add aside input[type="submit"]{
+	display: block;
+	float: left;
+	height: 50px;
+	width: 100px;
+	margin: 5%;
+	line-height: 50px;
+	cursor: pointer;
+	background-color: #46CDCF;
+	font-size: .8em;
+	text-transform: uppercase;
+	color: #ffffff;
+	letter-spacing: 1px;
+	border: none;
+	border-radius: 5em;
+}
+article#room section article.add aside ul li textarea{
+	display: inline-block;
+	width: 100%;
+	resize: none;
+	opacity: 0;
+	border: none;
+	background: none;
+	height: 200px;
+	max-height: 200px;
+	min-height: 200px;
+	margin-top: 0%;
+	font-size: 1em;
+
+}
+article#room section article.add aside ul li textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(0,0,0,.5);
+}
+article#room section article.add aside ul li textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:     rgba(0,0,0,.5);
+   opacity:  1;
+}
+article#room section article.add aside ul li textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:     rgba(0,0,0,.5);
+}
 article#room section article{
 	width: 100%;
 	float: left;
@@ -554,6 +672,15 @@ article#room section a.add{
 	height: 50px;
 	border-radius: 25px;
 	background-color: #2D4059;
+}
+
+article#room section a.add.open{
+	background-color: #EA5455;
+	-moz-transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
 }
 
 article#room section article aside{
