@@ -559,9 +559,7 @@ article#room section article.add header input{
 }
 article#room section article.add aside ul li{
 	display: inline-block;
-	box-sizing: border-box;
 	width: 100%;
-	padding: 30px;
 	font-size: 1.2em;
 	letter-spacing: 1px;
 	background-image: url(../images/assets/drop.svg);
@@ -576,13 +574,19 @@ article#room section article.add aside ul li{
 	color: #2D4059;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
+article#room section article.add aside ul li span{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 30px;
+}
 article#room section article.add aside ul li.open{
 	background-image: url(../images/assets/up.svg);
-	height: 280px;
+	height: 310px;
 }
 article#room section article.add aside ul li.open textarea{
 	opacity: 1;
-	margin-top: 5%;
+	margin-top: 0px;
 }
 article#room section article.add aside input[type="text"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    rgba(0,0,0,.5);
@@ -628,13 +632,14 @@ article#room section article.add aside ul li textarea{
 	display: inline-block;
 	width: 100%;
 	resize: none;
-	opacity: 0;
+	box-sizing: border-box;
+	padding: 0 30px 30px 30px;
 	border: none;
 	background: none;
 	height: 200px;
 	max-height: 200px;
 	min-height: 200px;
-	margin-top: 0%;
+	margin-top: 40px;
 	font-size: 1em;
 
 }
@@ -663,8 +668,13 @@ article#room section article header{
 	width: 100%;
 	float: left;
 }
-article#room section a.add{
-	display: inline-block;
+article#room header a.add{
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -25px;
+	top: 50%;
+	margin-top: -25px;
 	background-image: url(../images/assets/add.svg);
 	background-position: center;
 	margin-bottom: 70px;
@@ -674,7 +684,7 @@ article#room section a.add{
 	background-color: #2D4059;
 }
 
-article#room section a.add.open{
+article#room header a.add.open{
 	background-color: #EA5455;
 	-moz-transform: rotate(45deg);
 -webkit-transform: rotate(45deg);

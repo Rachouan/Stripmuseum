@@ -45,7 +45,7 @@ $(function () {
 				var data = new FormData();
 
 
-				formData.append("info_image", jQuery('#info_image')[0].files[0]);
+				formData.append("info_image",$('#info_image')[0].files[0]);
 				formData.append("ruimte_id", id);
 				formData.append("info_name", $('#info_name').val());
 				formData.append("description_en", $('#description_en').val());
@@ -68,8 +68,10 @@ $(function () {
 		    e.preventDefault(); // avoid to execute the actual submit of the form.
 		});
 
-		$("article#room section a.add").on("click",function (e) {
+		$("article#room header a.add").on("click",function (e) {
 				e.preventDefault();
+
+				$("article#room section").animate({scrollTop:0},1000);
 
 				if($(this).hasClass('open')){
 					$(this).removeClass('open');
@@ -80,9 +82,9 @@ $(function () {
 				}
 		});
 
-		$("article#room section article.add aside ul li").on("click",function (e) {
+		$("article#room section article.add aside ul li span").on("click",function (e) {
 				e.preventDefault();
-				var tab = $(this);
+				var tab = $(this).parent();
 
 
 				if(tab.hasClass("open")){
@@ -174,12 +176,41 @@ $(function () {
 
 	function loadRuimtes (lang) {
 
+
+
 		$.get( "http://"+ip+":8080/Ruimtes/getAll?lang="+lang, function( data ) {
 
 			$(data).each(function (key,val) {
 				console.log(val);
 
 				$("<section/>").addClass("comics").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href='' id='"+val.id+"'><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
+
+
+			});
+
+			assignActions();
+		});
+
+	}
+
+
+	function loadInfo (lang) {
+
+		console.log("hey");
+
+		$("article#room section article").each(function	(key,val) {
+			if(!$(val).hasClass('add')){
+				$(val).remove();
+			}
+		});
+
+		$.get( "http://"+ip+":8080/Info/getAlleInfoPerLang?r_id="+id+"lang="+lang, function( data ) {
+
+			$(data).each(function (key,val) {
+				console.log(val);
+
+				$("<article/>").addClass("comics").addClass("comics").html('<header><img src="images/info/3.jpg" alt="random"></header><aside><nav><span class="heart"></span><h1>234345</h1><a href class="edit"></a></nav><p>'+val.info+'</p></aside>').appendTo("article#room section");
+
 			});
 
 			assignActions();
@@ -246,9 +277,9 @@ $(function () {
 
 					case "icon enter":
 						$("article#room").addClass("open");
-						var id = $(this).attr("id");
+						id = $(this).attr("id");
 						$("article#room header h1").text(comic.find('header h1').text()+' room');
-
+						loadInfo("en");
 						console.log(id);
 
 					break;
