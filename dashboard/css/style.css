@@ -61,7 +61,7 @@ header#head form{
 	border-radius: 25px;
 	color: white;
 	overflow: hidden;
-	background-color: #B7E576;
+	background-color: #46CDCF;
 }
 
 header#head form:hover{
@@ -91,16 +91,23 @@ header#head form:hover input[type="text"]{
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    rgba(255,255,255,.5);
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:     rgba(255,255,255,.5);
-   opacity:  1;
-}
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
    color:     rgba(255,255,255,.5);
    opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:     rgba(255,255,255,.5);
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+::-moz-scrollbar {
+    display: none;
+}
+::-ms-scrollbar {
+    display: none;
 }
 
 header#head form input#search_btn{
@@ -200,7 +207,7 @@ header#head nav a:hover span{
 	left: 50px;
 }
 
-article{
+article#comics{
 
 	position: fixed;
 	height: 80%;
@@ -212,15 +219,16 @@ article{
 	top: 20%;
 	padding: 2.5% 0;
 }
-article.add section.comics.upload{
+article#comics.add section.comics.upload{
 	margin-left: 5%;
 }
-article section.comics{
+article#comics section.comics{
 	display: inline-block;
 	margin: 0 0 0 5%;
 	width: 450px;
 	height: 650px;
 	position: relative;
+	overflow: hidden;
 	border-radius: .5em;
 	background-color: #0C141C;
 	background-image: url(../images/tintin.jpg);
@@ -230,19 +238,20 @@ article section.comics{
 	background-repeat: no-repeat;
 
 }
-article section.comics.upload{
+article#comics section.comics.upload{
 	background: none;
 	margin-left: -450px;
 	background-color: #FFD460;
 
 }
 
-article section.comics nav{
+article#comics section.comics nav{
 
 	display: block;
 	position: absolute;
 	z-index: 9999;
-	right:  0px;
+	right:  100px;
+	top: 20px;
 	width: 250px;
 	height: auto;
 	opacity: 0;
@@ -251,19 +260,19 @@ article section.comics nav{
 	background-color: #0C141C;
 
 }
-article section.comics nav.open{
+article#comics section.comics nav.open{
 	opacity: 1;
-	right:  -300px;
+	right:  20px;
 
 }
-article section.comics nav ul{
+article#comics section.comics nav ul{
 
 	display: block;
 	width: 100%;
 	float: left;
 
 }
-article section.comics nav ul li{
+article#comics section.comics nav ul li{
 
 	display: block;
 	width: 100%;
@@ -271,12 +280,12 @@ article section.comics nav ul li{
 	border-bottom: 1px solid rgba(255,255,255,.2);
 
 }
-article section.comics nav ul li:last-child{
+article#comics section.comics nav ul li:last-child{
 
 	border: none;
 
 }
-article section.comics header a{
+article#comics section.comics header a{
 
 	display: block;
 	width: 50px;
@@ -289,7 +298,7 @@ article section.comics header a{
 	top: 10%;
 
 }
-article section.comics nav ul li a{
+article#comics section.comics nav ul li a{
 
 	display: block;
 	width: 100%;
@@ -300,26 +309,26 @@ article section.comics nav ul li a{
 	font-weight: bold;
 
 }
-article section.comics nav ul li a span.icon{
+article#comics section.comics nav ul li a span.icon{
 
 	background-repeat: no-repeat;
 	padding: 30px;
 	width: 10px;
 	background-position: center;
 }
-article section.comics nav ul li a span.enter{
+article#comics section.comics nav ul li a span.enter{
 
 	background-image: url(../images/assets/eye.svg);
 }
-article section.comics nav ul li a span.edit{
+article#comics section.comics nav ul li a span.edit{
 
 	background-image: url(../images/assets/edit.svg);
 }
-article section.comics nav ul li a span.trash{
+article#comics section.comics nav ul li a span.trash{
 
 	background-image: url(../images/assets/trash.svg);
 }
-article section.comics nav ul li a span{
+article#comics section.comics nav ul li a span{
 
 	display: block;
 	padding: 30px 20px;
@@ -327,12 +336,12 @@ article section.comics nav ul li a span{
 	height: 10px;
 	line-height: 10px;
 }
-article section.comics nav ul li a:hover{
+article#comics section.comics nav ul li a:hover{
 
 	background-color: rgba(0,0,0,.5);
 }
 
-article section.comics header{
+article#comics section.comics header{
 
 	width: 100%;
 	box-sizing:border-box;
@@ -343,12 +352,12 @@ article section.comics header{
 	background-color: #0C141C;
 	bottom: 0;
 }
-article section.comics.upload header{
+article#comics section.comics.upload header{
 
 	width: 100%;
 	height: 350px;
 }
-article section.comics form .upload{
+article#comics section.comics form .upload{
 	float: left;
 	position: relative;
 	width: 100%;
@@ -360,7 +369,7 @@ article section.comics form .upload{
 	background-repeat: no-repeat;
 	background-size: 200px;
 }
-article section.comics form .upload h1{
+article#comics section.comics form .upload h1{
 
 	left: 0;
 	bottom: 70px;
@@ -372,14 +381,14 @@ article section.comics form .upload h1{
 	letter-spacing: 2px;
 	color: rgba(0, 0, 0, 0.6);
 }
-article section.comics form .upload input{
+article#comics section.comics form .upload input{
 	position: absolute;
 	width: 200%;
 	height: 200%;
 	opacity: 0;
 	cursor: pointer;
 }
-article section.comics form header input[type='text']{
+article#comics section.comics form header input[type='text']{
 	display: block;
 	float: left;
 	width: 100%;
@@ -394,7 +403,7 @@ article section.comics form header input[type='text']{
 	letter-spacing: 5px;
 	margin-bottom: 10%;
 }
-article section.comics form header input[type='submit']{
+article#comics section.comics form header input[type='submit']{
 	display: block;
 	float: left;
 	margin-top: 40px;
@@ -411,7 +420,7 @@ article section.comics form header input[type='submit']{
 	border-radius: 5em;
 
 }
-article section.comics form header input[type='button']{
+article#comics section.comics form header input[type='button']{
 	display: block;
 	float: right;
 	margin-top: 40px;
@@ -428,13 +437,13 @@ article section.comics form header input[type='button']{
 	border-radius: 5em;
 
 }
-article section.comics form header input[type='text'].comics{
+article#comics section.comics form header input[type='text'].comics{
 	font-family: Bariol-Regular;
 	color: rgba(255,255,255,.5);
 	font-size: 1.2em;
 	margin-bottom: 5%;
 }
-article section.comics header h1{
+article#comics section.comics header h1{
 
 	color: #ffffff;
 	font-size: 1.5em;
@@ -442,7 +451,7 @@ article section.comics header h1{
 	letter-spacing: 5px;
 	margin-bottom: 5%;
 }
-article section.comics header h2{
+article#comics section.comics header h2{
 	font-weight: normal;
 	display: inline-block;
 	white-space: pre-wrap;
@@ -450,11 +459,157 @@ article section.comics header h2{
 	color: rgba(255,255,255,.5);
 }
 
-article section.comics footer{
+article#comics section.comics footer{
 	position: absolute;
 	display: block;
 	width: 5%;
 	right: 0;
 	height: 100%;
 	background-color: #FFD460;
+}
+
+
+article#room{
+	position: fixed;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	overflow: hidden;
+	height: 97.5%;
+	background-color: #FFD460;
+	border-radius: 1em;
+
+}
+article#room.open{
+	top: 2.5%;
+}
+
+article#room header#roomhead{
+	position: absolute;
+	z-index: 9999;
+	padding: 50px;
+	width: 100%;
+	line-height: 50px;
+	box-sizing: border-box;
+	background-color: #FFD460;
+	-webkit-box-shadow: 0 20px 30px 30px #FFD460;
+box-shadow: 0 20px 30px 30px #FFD460;
+
+}
+article#room header#roomhead h1{
+	color: #2D4059;
+	text-transform: uppercase;
+	float: left;
+	letter-spacing: 1px;
+	font-family: Bariol-Bold;
+}
+
+article#room header#roomhead a.close{
+	display: block;
+	float: right;
+	color: white;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #EA5455;
+	background-image: url(../images/assets/cross.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+article#room section{
+	position: fixed;
+	box-sizing: border-box;
+	padding: 150px 0;
+	left: 50%;
+	margin-left: -300px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 600px;
+	text-align: center;
+}
+
+article#room section article{
+	width: 100%;
+	float: left;
+	text-align: left;
+	height: auto;
+	border-radius: .5em;
+	overflow: hidden;
+
+	margin-bottom: 40px;
+	background-color: #ECF0F1;
+}
+article#room section article header{
+	width: 100%;
+	float: left;
+}
+article#room section a.add{
+	display: inline-block;
+	background-image: url(../images/assets/add.svg);
+	background-position: center;
+	margin-bottom: 70px;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #2D4059;
+}
+
+article#room section article aside{
+	width: 100%;
+	float: left;
+}
+
+article#room section article aside nav{
+	width: 100%;
+	float: left;
+	padding: 5%;
+	box-sizing: border-box;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+article#room section article aside nav span{
+	display: block;
+	float: left;
+	background-image: url(../images/assets/like.svg);
+	background-position: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #EA5455;
+}
+
+article#room section article aside nav a{
+	display: block;
+	float: right;
+	background-image: url(../images/assets/cog.svg);
+	background-position: center;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #2D4059;
+}
+article#room section article aside nav h1{
+	font-size: 1.2em;
+	font-family: Bariol-Bold;
+	display: block;
+	float: left;
+	margin-left: 30px;
+	line-height: 50px;
+	height: 50px;
+	color: #2D4059;
+}
+article#room section article aside p{
+	float:left;
+	padding: 5%;
+	width: 100%;
+	margin-bottom: 30px;
+	font-size: 1.1em;
+	line-height:1.6em;
+	box-sizing: border-box;
+}
+
+article#room section article header img{
+	width: 100%;
+	float: left;
 }

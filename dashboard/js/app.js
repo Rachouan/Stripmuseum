@@ -1,12 +1,14 @@
 $(function () {
 
+	var ip = '10.3.210.118';
+
 	function init () {
 
 
 
 		$("#addNew").submit(function(e) {
 
-		    var url = "http://10.3.210.104:8080/Ruimtes/voegRuimteToe"; // the script where you handle the form input.
+		    var url = "http://"+ip+":8080/Ruimtes/voegRuimteToe"; // the script where you handle the form input.
 				var formData = new FormData();
 				var data = new FormData();
 				/*jQuery.each(jQuery('#image')[0].files, function(i, file) {
@@ -14,6 +16,9 @@ $(function () {
 				});*/
 				formData.append("image", jQuery('#image')[0].files[0]);
 				formData.append("name", $('#name').val());
+				formData.append("comic_en", $('#comic_en').val());
+				formData.append("comic_nl", $('#comic_nl').val());
+				formData.append("comic_fr", $('#comic_fr').val());
 
 				jQuery.ajax({
 				    url: url,
@@ -32,6 +37,18 @@ $(function () {
 		});
 
 
+		$("header#head input#search").on("keyup",function () {
+				var searchItem = $(this).val().toLowerCase();
+				$("article#comics section.comics header h1").each(function (key,val) {
+					if ($(val).text().toLowerCase().indexOf(searchItem) > -1) {
+							$(val).parent().parent().fadeIn(1000);
+					}else{
+							$(val).parent().parent().fadeOut(1000);
+					}
+				});
+		});
+
+
 		$("input[type='file']").change(function(){
 		    readURL(this);
 		});
@@ -42,6 +59,12 @@ $(function () {
 			clearForm($("#addNew"));
 
 
+		});
+
+
+		$("article#room header a.close").on("click",function	(e) {
+			e.preventDefault();
+			$("article#room").removeClass("open");
 		});
 
 		$("a#add").on('click',function	(e) {
@@ -56,10 +79,10 @@ $(function () {
 					$(this).html('<span>close</span>');
 			}
 
-			if($("article").hasClass("add")){
-					$("article").removeClass("add");
+			if($("article#comics").hasClass("add")){
+					$("article#comics").removeClass("add");
 			}else {
-				$("article").addClass("add");
+				$("article#comics").addClass("add");
 			}
 
 
@@ -90,18 +113,17 @@ $(function () {
 
 	function loadRuimtes (lang) {
 
-		$.get( "http://10.3.210.104:8080/Ruimtes/getAll?lang="+lang, function( data ) {
+		$.get( "http://"+ip+":8080/Ruimtes/getAll?lang="+lang, function( data ) {
 
 			$(data).each(function (key,val) {
 				console.log(val);
 
-				$("<section/>").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href=''><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article");
+				$("<section/>").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href=''><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
 			});
 
-
+			assignActions();
 		});
 
-		assignActions();
 	}
 
 
@@ -123,10 +145,11 @@ $(function () {
 
 	function assignActions () {
 
+		$("section.comics header a.edit").on('click',function (e) {
 
-
-		$("section.comics header a").on('click',function (e) {
 			e.preventDefault();
+
+			console.log("CLICKED EDIT");
 
 			var comic = $(this).parent().parent();
 			var navigation = comic.find("nav");
@@ -134,6 +157,13 @@ $(function () {
 			if(navigation.hasClass("open")){
 				navigation.removeClass("open");
 			}else{
+
+			$("article#comics section.comics nav").each(function(key,val) {
+				if(val !== navigation){
+					$(val).removeClass("open");
+				}
+			});
+
 				navigation.addClass("open");
 			}
 
@@ -146,10 +176,16 @@ $(function () {
 
 					case "icon trash":
 
-					console.log($(this).attr("id"));
-					$.post( "10.3.210.104:8080/Ruimtes/verwijderRuimte",{id:$(this).attr("id")}, function( data ) {
-					  console.log(data);
-					});
+						console.log($(this).attr("id"));
+						$.post( "http://"+ip+":8080/Ruimtes/verwijderRuimte",{id:$(this).attr("id")}, function( data ) {
+						  console.log(data);
+						});
+
+					break;
+
+					case "icon enter":
+						$("article#room").addClass("open");
+						$("article#room header h1").text(comic.find('header h1').text()+' room');
 
 					break;
 
