@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000</color>
+    <color name="colorBg">#1C2938</color>
+    <color name="colorComicBg">#304059</color>
+    <color name="textColorLight">#FFFFFF</color>
+    <color name="textColorDark">#000000</color>
+    <color name="colorBgLight">#FFD45F</color>
+    <color name="buttonColorRed">#E95555</color>
+    <color name="buttonColorRedPressed">#F97777</color>
+    <color name="buttonColorGreen">#57BFB5</color>
+    <color name="buttonColorGreenPressed">#67DFD5</color>
+    <color name="buttonColorDark">#1C2938</color>
+    <color name="buttonColorDarkPressed">#2C4978</color>
+    <color name="lightBlue">#4BA0D4</color>
+</resources>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp" tools:context=".MainActivity">
+
+
+
+    <!--<ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/navigatieMenu"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" /-->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/black"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:onClick="openTeaser"
+                android:background="@drawable/menu_item1"
+                android:layout_weight="0.25"
+                >
+                
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:paddingTop="50dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/teaser"
+                    android:id="@+id/titel1"
+                    android:layout_weight="0.5"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:paddingTop="2dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/teaserSubTitel"
+                    android:id="@+id/subTitel1"
+                    android:layout_weight="0.5"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/menu_item2"
+                android:layout_weight="0.25"
+                android:onClick="scanQR"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:paddingTop="50dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/scan"
+                    android:id="@+id/titel2"
+                    android:layout_weight="0.5"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:paddingTop="2dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/scanSubTitel"
+                    android:id="@+id/subTitel2"
+                    android:layout_weight="0.5"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/menu_item3"
+                android:layout_weight="0.25"
+                android:onClick="openOrderTicket"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:paddingTop="50dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/order"
+                    android:id="@+id/titel3"
+                    android:layout_weight="0.5"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:paddingTop="2dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/orderSubTitel"
+                    android:id="@+id/subTitel3"
+                    android:layout_weight="0.5"/>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/menu_item4"
+                android:layout_weight="0.25"
+                android:onClick="openMyComics"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    android:paddingTop="50dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/myComics"
+                    android:id="@+id/titel4"
+                    android:layout_weight="0.5"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:textAlignment="center"
+                    android:textSize="15sp"
+                    android:paddingTop="2dp"
+                    android:textColor="@color/textColorLight"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/myComicsSubTitel"
+                    android:id="@+id/subTitel4"
+                    android:layout_weight="0.5"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+

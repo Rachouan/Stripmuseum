@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">StripMuseumDemo2</string>
+
+    <string name="teaser">TEASER OF THE WEEK</string>
+    <string name="teaserSubTitel">HERGE  THE ADVENTURES OF TINTIN</string>
+
+    <string name="scan">SCAN TICKET</string>
+    <string name="scanSubTitel">TO USE OTHER FEATURES OF THE APP</string>
+
+    <string name="order">ORDER TICKET</string>
+    <string name="orderSubTitel">DON\'T WAIT IN LINE PREORDER IT</string>
+
+    <string name="myComics">MY COMICS</string>
+    <string name="myComicsSubTitel">CREATE YOUR OWN STORIES</string>
+
+    <string name="voorNaam">BERT</string>
+    <string name="achterNaam">VAN DEN EINDE</string>
+    <string name="aantalPersonen">2 PERS</string>
+    <string name="vervalDatum">GELDIG TOT 26 DEC 2015</string>
+    <string name="scanInstructies">LAAT DEZE QR CODE\nSCANNEN AAN HET ONTHAAL</string>
+
+
+    <string name="second_activity_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel dignissim pharetra. Vivamus pharetra augue quis rhoncus placerat. Sed ultricies at risus non cursus. Nam rutrum leo nec placerat consectetur. Vestibulum feugiat eleifend diam, nec interdum augue tincidunt sit amet. Praesent feugiat est auctor lacus consectetur, vitae pellentesque dolor laoreet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consectetur diam id aliquam scelerisque. Donec ultrices lacus vel dignissim pharetra. Vivamus pharetra augue quis rhoncus placerat. Sed ultricies at risus non cursus. Nam rutrum leo nec placerat consectetur. Vestibulum feugiat eleifend diam, nec interdum augue tincidunt sit amet. Praesent feugiat est auctor lacus consectetur, vitae pellentesque dolor laoreet.</string>
+    <string name="comic_uitleg">THE ADVENTURES OF TINTIN</string>
+
+    <string name="room_naam">HERGE SPACE</string>
+
+    <string name="comic_auteur">HERGE</string>
+    <string name="comic_subtitel">THE ADVENTURES OF TINTIN</string>
+
+</resources>
