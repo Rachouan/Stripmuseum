@@ -247,7 +247,16 @@ article#comics section.comics.upload{
 	background-color: #FFD460;
 
 }
+article#comics section.comics.edit{
+	background: none;
+	margin-left: -460px;
+	background-color: #FFD460;
 
+}
+article#comics section.comics.edit.open{
+	margin-left: 5%;
+
+}
 article#comics section.comics nav{
 
 	display: block;

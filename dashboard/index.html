@@ -53,6 +53,24 @@
                 </form>
         	</section>
 
+            <section class="comics edit">
+                <form id="editRuimte" action="http://10.3.210.118:8080/Ruimtes/voegRuimteToe" method="post" enctype="multipart/form-data">
+                    <div class="upload">
+                        <input type="file" name="image" id="edit_image">
+                    </div>
+        		<header>
+
+                        <input type="text" name="name" id="edit_name" placeholder="Artist name">
+                        <input type="text" name="comic_en" id="edit_comic_en" class="comics" placeholder="Comic">
+                        <input type="text" name="comic_nl" id="edit_comic_nl" class="comics"  placeholder="Stripverhaal">
+                        <input type="text" name="comic_fr" id="edit_comic_fr" class="comics" placeholder="Bande dessinée">
+                        <input type="submit" name="btn_submit"  id="edit_btn_submit" value="Save">
+                        <input type="button" name="btn_clear"  id="edit_btn_clear" value="clear">
+
+        		</header>
+                </form>
+        	</section>
+
 
         </article>
 
@@ -99,7 +117,7 @@
 
             </article>
 
-                <article class="edit">
+                <article class="edit open">
                     <form id="editRuimteInfo" action="http://10.3.210.118:8080/Info/voegInfoToeAanRuimte" method="post" enctype="multipart/form-data">
 
                     <header class="upload">
