@@ -530,10 +530,24 @@ article#room section{
 }
 
 article#room section article.add{
+	z-index: -9999;
 	margin-top: -200%;
 	opacity: 0;
 }
 article#room section article.add.open{
+
+	z-index: 9999;
+	margin-top: 0px;
+	opacity: 1;
+}
+
+article#room section article.edit{
+	z-index: -9999;
+	margin-top: -400%;
+	opacity: 0;
+}
+article#room section article.edit.open{
+	z-index: 9999;
 	margin-top: 0px;
 	opacity: 1;
 }
@@ -653,6 +667,136 @@ article#room section article.add aside ul li textarea::-moz-placeholder { /* Moz
 article#room section article.add aside ul li textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:     rgba(0,0,0,.5);
 }
+
+
+
+
+
+
+
+article#room section article.edit header{
+	width: 100%;
+	float: left;
+	background-image: url(../images/assets/upload.svg);
+	height: 300px;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+	background-size: 200px;
+	background-color: #EA5455;
+	background-repeat: no-repeat;
+}
+article#room section article.edit header input{
+	left: 0;
+	top: 0;
+	width: 200%;
+	height: 200%;
+	opacity: 0;
+	cursor:pointer;
+}
+article#room section article.edit aside ul li{
+	display: inline-block;
+	width: 100%;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	background-image: url(../images/assets/drop.svg);
+	text-transform: uppercase;
+	background-repeat: no-repeat;
+	background-position: top 20px right 30px;
+	background-size: 50px;
+	height: 90px;
+	cursor: pointer;
+	font-family: Bariol-Bold;
+	overflow: hidden;
+	color: #2D4059;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+article#room section article.edit aside ul li span{
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 30px;
+}
+article#room section article.edit aside ul li.open{
+	background-image: url(../images/assets/up.svg);
+	height: 310px;
+}
+article#room section article.edit aside ul li.open textarea{
+	opacity: 1;
+	margin-top: 0px;
+}
+article#room section article.edit aside input[type="text"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(0,0,0,.5);
+}
+article#room section article.edit aside input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:     rgba(0,0,0,.5);
+   opacity:  1;
+}
+article#room section article.edit aside input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:     rgba(0,0,0,.5);
+}
+article#room section article.edit aside input[type="text"]{
+	display: block;
+	float: left;
+	width: 100%;
+	padding: 30px;
+	color: #2D4059;
+	background: none;
+	border: none;
+	font-size: 1.2em;
+	font-family: Bariol-Bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+article#room section article.edit aside input[type="submit"]{
+	display: block;
+	float: left;
+	height: 50px;
+	width: 100px;
+	margin: 5%;
+	line-height: 50px;
+	cursor: pointer;
+	background-color: #46CDCF;
+	font-size: .8em;
+	text-transform: uppercase;
+	color: #ffffff;
+	letter-spacing: 1px;
+	border: none;
+	border-radius: 5em;
+}
+article#room section article.edit aside ul li textarea{
+	display: inline-block;
+	width: 100%;
+	resize: none;
+	box-sizing: border-box;
+	padding: 0 30px 30px 30px;
+	border: none;
+	background: none;
+	height: 200px;
+	max-height: 200px;
+	min-height: 200px;
+	margin-top: 40px;
+	font-size: 1em;
+
+}
+article#room section article.edit aside ul li textarea::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    rgba(0,0,0,.5);
+}
+article#room section article.edit aside ul li textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:     rgba(0,0,0,.5);
+   opacity:  1;
+}
+article#room section article.edit aside ul li textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:     rgba(0,0,0,.5);
+}
+
+
+
+
+
+
+
 article#room section article{
 	width: 100%;
 	float: left;

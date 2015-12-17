@@ -1,6 +1,6 @@
 $(function () {
 
-	var ip = '10.3.210.118';
+	var ip = '10.3.210.80';
 	var id;
 
 	function init () {
@@ -199,7 +199,7 @@ $(function () {
 		console.log("hey");
 
 		$("article#room section article").each(function	(key,val) {
-			if(!$(val).hasClass('add')){
+			if(!$(val).hasClass('add') && !$(val).hasClass('edit')){
 				$(val).remove();
 			}
 		});
@@ -209,11 +209,45 @@ $(function () {
 			$(data).each(function (key,val) {
 				console.log(val);
 
-				$("<article/>").addClass("comics").addClass("comics").html('<header><img src="images/info/3.jpg" alt="random"></header><aside><nav><span class="heart"></span><h1>234345</h1><a href class="edit"></a></nav><p>'+val.info+'</p></aside>').appendTo("article#room section");
+				$("<article/>").addClass("comics").addClass("comics").html('<header><img src="images/info/3.jpg" alt="random"></header><aside><nav><span class="heart"></span><h1>234345</h1><a href class="edit" id="'+val.i_id+'"></a></nav><p>'+val.info+'</p></aside>').appendTo("article#room section");
 
 			});
 
-			assignActions();
+
+			$("article#room section article a.edit").on("click",function	(e) {
+				e.preventDefault();
+				console.log("EDIT");
+				var edit = $(this);
+
+				if($("article#room section article.edit").hasClass('open')){
+					$("article#room section article.edit").removeClass('open');
+				}else {
+					$("article#room section article.edit").addClass('open');
+				}
+
+					$.get( "http://"+ip+":8080/Info/getInfo?i_id="+edit.attr('id'), function( data ) {
+						console.log(data);
+					});
+			});
+
+		});
+
+
+		$("article#room section article.edit aside ul li span").on("click",function (e) {
+				e.preventDefault();
+				var tab = $(this).parent();
+
+
+				if(tab.hasClass("open")){
+					tab.removeClass("open");
+				}else{
+					$("article#room section article.edit aside ul li").each(function (key,val) {
+						if( tab !== val){
+								$(val).removeClass('open');
+						}
+					});
+					tab.addClass("open");
+				}
 		});
 
 	}
