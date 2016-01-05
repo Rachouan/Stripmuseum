@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="clearwhite">#acadb8</color>
+    <color name="darkBlue">#1c2937</color>
+    <color name="lightBlue">#2f4058</color>
+    <color name="radioChecked">#5abfb5</color>
+    <color name="radioUnchecked">#335a60</color>
+    <color name="red">#d95051</color>
+    <color name="yellow">#facf61</color>
+    <color name="blue">#4c95c2</color>
+    <color name="beige">#f1e6c3</color>
+</resources>

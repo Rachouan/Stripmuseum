@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:foo="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/darkBlue"
+    android:padding="40dp">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/cardview">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:padding="40dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/cardviewlabel"
+                android:orientation="vertical">
+
+            <be.ehb.dt.stripmuseum.TextViewPlus
+                android:id="@+id/cardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginBottom="15dp"
+                android:text="HERGÉ"
+                android:textAllCaps="true"
+                foo:customFont="@string/bariolbold"/>
+
+            <be.ehb.dt.stripmuseum.TextViewPlus
+                android:id="@+id/cardSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/clearwhite"
+                android:text="THE ADVENTURES OF TINTIN"
+                android:textAllCaps="true"
+                foo:customFont="@string/bariolbold"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+</LinearLayout>

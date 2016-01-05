@@ -1,6 +1,6 @@
 $(function () {
 
-	var ip = '10.3.210.80:8080';
+	var ip = '10.3.50.226:8080';
 	var id;
 	var editid;
 
