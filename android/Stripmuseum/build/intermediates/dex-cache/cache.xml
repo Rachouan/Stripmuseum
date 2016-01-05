@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/rachouanrejeb/AndroidStudioProjects/stripmuseum2/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        jar="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/rachouanrejeb/AndroidStudioProjects/stripmuseum2/app/build/intermediates/pre-dexed/debug/classes-334eb925dffbf03123b0bf71ca61d9e4aaec1f39.jar" />
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/pre-dexed/debug/classes-f900c31f8f24303217e52dd52c75efb334c42338.jar" />
     </item>
 
 </items>

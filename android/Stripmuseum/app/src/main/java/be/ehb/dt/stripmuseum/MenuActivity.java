@@ -28,10 +28,10 @@ public class MenuActivity extends AppCompatActivity {
 
 
         mainmenu = new ArrayList<ItemMenu>();
-        mainmenu.add(new ItemMenu("TEASER OF THE WEEK",0,"HERGE THE ADVENTURES OF TINTIN",R.drawable.yellowmenu,new Intent(this,MainActivity.class)));
-        mainmenu.add(new ItemMenu("SCAN TICKET",1,"HERGE THE ADVENTURES OF TINTIN",R.drawable.greenmenu,new Intent(this,ZBarScannerActivity.class)));
-        mainmenu.add(new ItemMenu("ORDER TICKER",0,"HERGE THE ADVENTURES OF TINTIN",R.drawable.bluemenu,new Intent(this,MainActivity.class)));
-        mainmenu.add(new ItemMenu("MY COMICS",0,"HERGE THE ADVENTURES OF TINTIN",R.drawable.redmenu,new Intent(this,MainActivity.class)));
+        mainmenu.add(new ItemMenu("TEASER OF THE WEEK",2,"HERGE THE ADVENTURES OF TINTIN",R.drawable.yellowmenu,new Intent(this,RoomActivity.class)));
+        mainmenu.add(new ItemMenu("SCAN TICKET",1,"TO USE OTHER FEATURES OF THE APP",R.drawable.greenmenu,new Intent(this,ZBarScannerActivity.class)));
+        mainmenu.add(new ItemMenu("ORDER TICKER",0,"DON’T WAIT IN LINE PREORDER IT",R.drawable.bluemenu,new Intent(this,MainActivity.class)));
+        mainmenu.add(new ItemMenu("MY COMICS",0,"CREATE YOUR OWN STORIES",R.drawable.redmenu,new Intent(this,MainActivity.class)));
 
         drawMenu();
     }
@@ -67,12 +67,22 @@ public class MenuActivity extends AppCompatActivity {
                     ItemMenu selectedItem = mainmenu.get(v.getId());
                     Intent inten = selectedItem.getMainclass();
 
-                    if(selectedItem.getType() == 1){
-                        inten.putExtra(ZBarConstants.SCAN_MODES, new int[]{Symbol.QRCODE});
-                        startActivityForResult(inten, 0);
-                    }else{
-                        startActivity(inten);
+                    switch (selectedItem.getType()){
+                        case 0:
+                            startActivity(inten);
+                        break;
+                        case 1:
+                            inten.putExtra(ZBarConstants.SCAN_MODES, new int[]{Symbol.QRCODE});
+                            startActivityForResult(inten, 0);
+                            break;
+                        case 2:
+                            inten.putExtra("ROOM_ID", 1);
+                            startActivity(inten);
+                            break;
+                        default:
+                            startActivity(inten);
                     }
+
                     //Intent room = selectedItem.getMainclass();
 
 

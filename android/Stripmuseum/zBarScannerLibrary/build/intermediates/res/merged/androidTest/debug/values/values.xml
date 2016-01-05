@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/rachouanrejeb/AndroidStudioProjects/stripmuseum2/zBarScannerLibrary/build/intermediates/bundles/debug/res/values/values.xml -->
+    <!-- From: file:/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/zBarScannerLibrary/build/intermediates/bundles/debug/res/values/values.xml -->
     <eat-comment/>
     <string name="app_name">ZBar Scanner</string>
 </resources>

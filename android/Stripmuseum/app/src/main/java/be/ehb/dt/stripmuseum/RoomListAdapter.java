@@ -1,6 +1,7 @@
 package be.ehb.dt.stripmuseum;
 
 import android.content.Context;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,37 +36,20 @@ public class RoomListAdapter extends ArrayAdapter<Info>{
 
         View roomlist = playInflater.inflate(R.layout.room_list_layout, parent, false);
 
+        ImageView imageView = (ImageView) roomlist.findViewById(R.id.mainImage);
+
         info = getItem(position);
-        new HttpRequestTask().execute();
+        Log.d("URL", "http://rachouanrejeb.be/stripmuseum/info/" + info.getImage());
+
+
+
+        String url = "http://rachouanrejeb.be/stripmuseum/info/"+info.getImage();
+
+        new ImageDownloader(imageView).execute(url.replace(" ", ""));
 
 
         return roomlist;
 
     }
 
-
-    private class HttpRequestTask extends AsyncTask<Void, Void, ArrayList<Info>> {
-        @Override
-        protected ArrayList<Info> doInBackground(Void... params) {
-            try {
-                final String url = "http://10.3.50.226:8080/Info/getImageById?i_id="+info.getI_id();
-                RestTemplate restTemplate = new RestTemplate();
-                restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-                //De volgende lijn maakt automatisch 1 ruimte object aan
-                //Ruimte ruimte = restTemplate.getForObject(url, Ruimte.class);
-                ArrayList result = restTemplate.getForObject(url, ArrayList.class, "SpringSource");
-                Log.d("Toon resultaat: ", result.toString());
-                ArrayList<Info> ruimteinfos = new ArrayList<Info>();
-
-                return ruimteinfos;
-            } catch (Exception e) {
-                Log.e("MainActivity", e.getMessage(), e);
-            }
-            return null;
-        }
-        @Override
-        protected void onPostExecute(ArrayList<Info> ruimteInfos) {
-
-        }
-    }
 }

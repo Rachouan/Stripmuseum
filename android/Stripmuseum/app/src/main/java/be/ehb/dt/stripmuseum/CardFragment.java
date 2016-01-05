@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -27,10 +28,13 @@ public class CardFragment extends Fragment {
 
         title = (TextView) v.findViewById(R.id.cardTitle);
         title.setText(txtTitle);
-        Log.d("NAME = ",txtTitle);
+        Log.d("NAME = ", txtTitle);
         txtTitle = getArguments().getString("COMIC");
         title = (TextView) v.findViewById(R.id.cardSubtitle);
         title.setText(txtTitle);
+
+        ImageView imageView = (ImageView) v.findViewById(R.id.cardImage);
+        new ImageDownloader(imageView).execute("http://rachouanrejeb.be/stripmuseum/rooms/"+getArguments().getString("IMAGE"));
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

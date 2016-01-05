@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/rachouanrejeb/AndroidStudioProjects/stripmuseum2/zBarScannerLibrary/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/rachouanrejeb/AndroidStudioProjects/stripmuseum2/zBarScannerLibrary/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/zBarScannerLibrary/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/zBarScannerLibrary/src/debug/assets"/></dataSet></merger>

@@ -27,6 +27,7 @@ public class CardViewAdapter extends FragmentPagerAdapter{
             bundle.putInt("ID", ruimtes.get(position).getId());
             bundle.putString("NAME", ruimtes.get(position).getName());
             bundle.putString("COMIC", ruimtes.get(position).getComic());
+            bundle.putString("IMAGE", ruimtes.get(position).getImage());
             CardFragment c = new CardFragment();
             c.setArguments(bundle);
             return c;

@@ -26,7 +26,7 @@
 
 
         <be.ehb.dt.stripmuseum.TextViewPlus
-            android:id="@+id/menutitle"
+            android:id="@+id/fragTitle"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:textColor="@color/darkBlue"
@@ -49,10 +49,12 @@
 
     <ImageView
         android:layout_width="match_parent"
+        android:id="@+id/fragImage"
         android:layout_height="200dp"
         android:layout_margin="20dp"
         android:background="@drawable/detaillayout"
-        android:backgroundTint="@color/white"/>
+        android:backgroundTint="@color/white"
+        android:scaleType="centerCrop"/>
 
 
 </LinearLayout>

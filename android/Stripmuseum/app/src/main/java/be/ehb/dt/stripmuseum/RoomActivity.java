@@ -1,14 +1,26 @@
 package be.ehb.dt.stripmuseum;
 
+import android.animation.LayoutTransition;
+import android.annotation.TargetApi;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.res.Resources;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.design.widget.TabLayout;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AbsoluteLayout;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
@@ -19,6 +31,8 @@ public class RoomActivity extends AppCompatActivity {
     private ListView mListView;
     private RoomListAdapter mAdapter;
     private String roomid;
+    private View detail;
+    private DetailFragment detailfrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +40,18 @@ public class RoomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_room);
 
 
-
         mListView = (ListView) findViewById(R.id.room_list);
+
+        detail = findViewById(R.id.dragDown);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+
+        int height = getResources().getDisplayMetrics().heightPixels - 150;
+        params.topMargin = -height;
+
+        detail.setLayoutParams(params);
+        detail.setTranslationY(height);
+
 
 
         ImageButton backbtn = (ImageButton) findViewById(R.id.backbutton);
@@ -86,17 +110,17 @@ public class RoomActivity extends AppCompatActivity {
 
 
                 for ( int i = 0; i < result.size() ; i++){
-                    Log.d("Toon resultaat: ", result.get(i).toString());
                     String object = result.get(i).toString();
                     String[] o = object.split(",");
+
                     Info r = new Info();
-                    Log.d("Toon resultaat: ",o[0].toString());
                     String il_id = o[0].replace("{il_id=", "");
                     String i_id = o[1].replace(" i_id=", "");
                     String info = o[2].replace(" info=", "");
-                    String lang = o[1].replace(" lang=", "");
+                    String lang = o[3].replace(" lang=", "");
                     String name = o[4].replace(" name=", "");
                     String image = o[5].replace("image=", "");
+                    image = image.replace("}", "");
                     r.setIl_id(Integer.parseInt(il_id));
                     r.setI_id(Integer.parseInt(i_id));
                     r.setName(name);
@@ -119,8 +143,24 @@ public class RoomActivity extends AppCompatActivity {
             mAdapter = new RoomListAdapter(getApplicationContext(),ruimteInfos);
             mListView.setAdapter(mAdapter);
 
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("key", "PIPI");
+                    getWindow().getDecorView().findViewById(R.id.dragDown).animate().translationY(0.0f);
+
+
+                }
+            });
+
 
         }
+
+
     }
 
 }
