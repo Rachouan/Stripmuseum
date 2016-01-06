@@ -28,15 +28,6 @@
             android:src="@drawable/ic_search_button"/>
     </FrameLayout>
 
-    <be.ehb.dt.stripmuseum.HorizontalPager
-        android:id="@+id/horizontal_pager"
-        android:layout_width="fill_parent"
-        android:layout_height="0px"
-        android:layout_weight="1">
-
-
-    </be.ehb.dt.stripmuseum.HorizontalPager>
-
     <RadioGroup
         android:id="@+id/tabs"
         android:layout_height="wrap_content"

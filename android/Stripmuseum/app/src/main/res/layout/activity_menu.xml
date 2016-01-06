@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    tools:context="be.ehb.dt.stripmuseum.MenuActivity"
-    android:background="@color/darkBlue"
+    tools:context="be.ehb.dt.stripmuseum.activities.MenuActivity"
+    android:background="@android:color/black"
     android:orientation="vertical"
     android:id="@+id/mainmenu">
 

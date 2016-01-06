@@ -2,11 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars/classes.jar"
+        jar="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/exploded-aar/Stripmuseum/library/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="814fc0c3ec69a944add398217d90077301501a74">
-        <dex dex="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/pre-dexed/debug/classes-f900c31f8f24303217e52dd52c75efb334c42338.jar" />
+        sha1="a3c4185fc1622df3b6fe7acf8f2b60888af002e8">
+        <dex dex="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/pre-dexed/debug/classes-db1f45f2a4b693bb38a27c8109e1280944b36d0b.jar" />
+    </item>
+    <item
+        jar="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.7.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="cf8e282e7c1cdf175467ed2b40a358a271cda953">
+        <dex dex="/Volumes/Transcend/htdocs/Github/stripmuseum/android/Stripmuseum/app/build/intermediates/pre-dexed/debug/classes-5c187b8129a0e07e057edaa09a4d21b267f67d9a.jar" />
     </item>
 
 </items>

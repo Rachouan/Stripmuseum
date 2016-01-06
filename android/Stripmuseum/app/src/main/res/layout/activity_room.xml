@@ -3,16 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:foo="http://schemas.android.com/apk/res-auto"
-    tools:context="be.ehb.dt.stripmuseum.RoomActivity"
+    tools:context="be.ehb.dt.stripmuseum.activities.RoomActivity"
     android:background="@android:color/black"
     android:orientation="vertical">
-
 
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
+        android:layout_gravity="bottom"
         android:background="@drawable/roomlayout">
 
         <FrameLayout
@@ -31,7 +31,7 @@
                 android:src="@drawable/ic_back_button"/>
 
 
-            <be.ehb.dt.stripmuseum.TextViewPlus
+            <be.ehb.dt.stripmuseum.assets.TextViewPlus
                 android:id="@+id/menutitle"
                 android:layout_width="wrap_content"
                 android:textAlignment="center"
@@ -40,7 +40,7 @@
                 android:layout_gravity="center"
                 android:layout_height="wrap_content" android:text="HERGE SPACE"
                 foo:customFont="@string/bariolbold">
-            </be.ehb.dt.stripmuseum.TextViewPlus>
+            </be.ehb.dt.stripmuseum.assets.TextViewPlus>
 
         </FrameLayout>
 
@@ -51,21 +51,84 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="20dp"
-            android:padding="20dp">
+            android:divider="@android:color/transparent">
 
         </ListView>
 
     </LinearLayout>
 
-    <fragment android:name="be.ehb.dt.stripmuseum.DetailFragment"
+    <LinearLayout
         android:id="@+id/dragDown"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
-        android:animateLayoutChanges="true"
-        />
+        android:background="@drawable/detaillayout"
+        android:layout_gravity="bottom"
+        android:elevation="30dp">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:layout_marginBottom="-20dp">
+
+            <ImageButton
+                android:id="@+id/likebutton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:background="@drawable/redroundbutton"
+                android:src="@drawable/ic_like_button"
+                android:contentDescription="like" />
+
+
+            <be.ehb.dt.stripmuseum.assets.TextViewPlus
+                android:id="@+id/fragTitle"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/darkBlue"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content" android:text="TINTIN BUSTE"
+                foo:customFont="@string/bariolbold">
+            </be.ehb.dt.stripmuseum.assets.TextViewPlus>
+
+            <ImageButton
+                android:id="@+id/closebtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:background="@drawable/blackroundbutton"
+                android:src="@drawable/ic_cross_btn"
+                android:contentDescription="close" />
+
+        </FrameLayout>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:id="@+id/fragImage"
+            android:layout_height="200dp"
+            android:layout_margin="20dp"
+            app:riv_corner_radius="20dip"
+            android:background="@drawable/detaillayout"
+            android:backgroundTint="@color/white"
+            android:scaleType="centerCrop"/>
+
+
+        <TextView
+            android:id="@+id/infoText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:padding="20dp"
+            android:text="asdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdasasdasdas"/>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>

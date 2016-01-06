@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="be.ehb.dt.stripmuseum.activities.CreateComicActivity">
+
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:riv_corner_radius="10dip"
+            android:id="@+id/createImg"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"/>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/cover"
+            android:scaleType="centerCrop"
+            android:layout_gravity="bottom|center"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center"
+            android:padding="20dp">
+
+
+            <ImageButton
+                android:id="@+id/backbutton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:background="@drawable/redroundbutton"
+                android:src="@drawable/ic_cross_btn"/>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/save"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:background="@drawable/blueroundbutton"
+                android:src="@drawable/ic_check_btn"/>
+
+            <ImageButton
+                android:id="@+id/retry"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:background="@drawable/redroundbutton"
+                android:src="@drawable/ic_retry_btn"/>
+        </FrameLayout>
+
+
+
+    </FrameLayout>
+
+
+</LinearLayout>

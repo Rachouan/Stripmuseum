@@ -5,16 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/teaser"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:alpha="0.15"
+            />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center">
+
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_gravity="center"
-        android:paddingLeft="30dp"
         android:orientation="vertical">
 
-        <be.ehb.dt.stripmuseum.TextViewPlus
+        <be.ehb.dt.stripmuseum.assets.TextViewPlus
             android:id="@+id/menutitle"
             android:layout_width="match_parent"
             android:gravity="center"
@@ -23,10 +40,10 @@
             android:layout_marginBottom="10dp"
             android:layout_height="wrap_content" android:text="TEASER OF THE WEEK"
             foo:customFont="@string/bariolbold">
-        </be.ehb.dt.stripmuseum.TextViewPlus>
+        </be.ehb.dt.stripmuseum.assets.TextViewPlus>
 
 
-        <be.ehb.dt.stripmuseum.TextViewPlus
+        <be.ehb.dt.stripmuseum.assets.TextViewPlus
             android:id="@+id/menusubtitle"
             android:layout_width="match_parent"
             android:gravity="center"
@@ -47,5 +64,9 @@
         android:layout_gravity="end|center"
         android:contentDescription="slider"
         android:src="@drawable/menulabel"/>
+
+    </FrameLayout>
+
+    </FrameLayout>
 
 </LinearLayout>

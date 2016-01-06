@@ -27,7 +27,7 @@
                 android:background="@drawable/cardviewlabel"
                 android:orientation="vertical">
 
-            <be.ehb.dt.stripmuseum.TextViewPlus
+            <be.ehb.dt.stripmuseum.assets.TextViewPlus
                 android:id="@+id/cardTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:textAllCaps="true"
                 foo:customFont="@string/bariolbold"/>
 
-            <be.ehb.dt.stripmuseum.TextViewPlus
+            <be.ehb.dt.stripmuseum.assets.TextViewPlus
                 android:id="@+id/cardSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

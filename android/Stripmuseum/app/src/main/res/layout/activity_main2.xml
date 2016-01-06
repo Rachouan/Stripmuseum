@@ -3,13 +3,19 @@
     android:layout_height="fill_parent"
     android:layout_width="fill_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/darkBlue"
+    android:background="@android:color/black"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/cardlayout"
+        android:orientation="vertical">
     
     <FrameLayout
         android:layout_width="match_parent"
-        android:background="@color/darkBlue"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:padding="20dp">
 
         <ImageButton
@@ -27,22 +33,28 @@
             android:background="@drawable/blueroundbutton"
             android:src="@drawable/ic_search_button"/>
     </FrameLayout>
-    <android.support.design.widget.TabLayout
-        android:id="@+id/logintablayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabMode="fixed"
-        app:tabGravity="center"
-        app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/white"/>
+
 
     <android.support.v4.view.ViewPager
         android:layout_width="wrap_content"
         android:id="@+id/mainviewpager"
-        android:layout_height="wrap_content"/>
+        android:layout_height="400dp"
+        android:layout_weight="1"/>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/titles"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_width="fill_parent"
+        app:fillColor="@color/radioChecked"
+        app:pageColor="@color/radioUnchecked"
+        app:radius="7dp"
+        app:centered="true"
+        app:strokeColor="@android:color/transparent"
+        android:layout_gravity="bottom"/>
 
 
+    </LinearLayout>
 
 
 
