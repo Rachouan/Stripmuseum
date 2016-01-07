@@ -276,7 +276,7 @@ $(function () {
 			$(data).each(function (key,val) {
 				console.log(val);
 
-				$("<section/>").addClass("comics").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href='' id='"+val.id+"'><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''  id='"+val.id+"'><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
+				$("<section/>").css("background-image","url(http://rachouanrejeb.be/stripmuseum/rooms/"+val.image+")").addClass("comics").html("<header><h1>"+val.name+"</h1><h2>"+val.comic+"</h2><a href='' class='edit'></a></header><nav><ul><li><a href='' id='"+val.id+"'><span class='icon enter'></span><span>Enter</span></a></li><li><a href=''  id='"+val.id+"'><span class='icon edit'></span><span>Edit</span></a></li><li><a href='' id='"+val.id+"'><span class='icon trash'></span><span>Delete</span></a></li></ul></nav>").appendTo("article#comics");
 
 
 			});
@@ -303,7 +303,7 @@ $(function () {
 			$(data).each(function (key,val) {
 				console.log(val);
 
-				$("<article/>").addClass("comics").addClass("comics").html('<header><img src="images/info/3.jpg" alt="random"></header><aside><nav><span class="heart"></span><h1>234345</h1><a href class="edit" id="'+val.i_id+'"></a></nav><p>'+val.info+'</p></aside>').appendTo("article#room section");
+				$("<article/>").addClass("comics").addClass("comics").html('<header><img src="http://rachouanrejeb.be/stripmuseum/info/'+val.image+'" alt="random"></header><aside><nav><span class="heart"></span><h1>234345</h1><a href class="edit" id="'+val.i_id+'"></a></nav><p>'+val.info+'</p></aside>').appendTo("article#room section");
 
 			});
 

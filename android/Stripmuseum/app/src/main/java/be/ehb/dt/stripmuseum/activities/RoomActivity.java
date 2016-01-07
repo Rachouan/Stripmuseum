@@ -191,6 +191,9 @@ public class RoomActivity extends AppCompatActivity {
                     TextView text = (TextView) detail.findViewById(R.id.infoText);
                     text.setText(currentInfo.getInfo());
 
+                    TextView text2 = (TextView) detail.findViewById(R.id.fragTitle);
+                    text2.setText(currentInfo.getName());
+
 
                 }
             });
