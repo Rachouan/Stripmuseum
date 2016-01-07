@@ -221,19 +221,7 @@ $(function () {
 			e.preventDefault();
 			console.log("CLICKED");
 
-			if($(this).hasClass('close')){
-					$(this).removeClass('close');
-					$(this).html('<span>New</span>');
-			}else {
-					$(this).addClass('close');
-					$(this).html('<span>close</span>');
-			}
-
-			if($("article#comics").hasClass("add")){
-					$("article#comics").removeClass("add");
-			}else {
-				$("article#comics").addClass("add");
-			}
+			$("article#comics section.upload input[type='text']").first().focus();
 
 
 		});

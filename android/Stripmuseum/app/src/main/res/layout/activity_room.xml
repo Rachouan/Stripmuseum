@@ -91,6 +91,7 @@
                 android:textColor="@color/darkBlue"
                 android:textSize="20sp"
                 android:layout_gravity="center"
+                android:textAllCaps="true"
                 android:layout_height="wrap_content" android:text="TINTIN BUSTE"
                 foo:customFont="@string/bariolbold">
             </be.ehb.dt.stripmuseum.assets.TextViewPlus>
